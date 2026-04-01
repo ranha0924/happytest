@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 행복 유형 테스트</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <span class="intro-badge">Happiness Type Test</span>
+    <h1>당신의 행복은<br>어떤 모양인가요?</h1>
+    <p>10개의 질문으로 알아보는 나만의 행복 유형.<br>당신이 진짜 행복을 느끼는 순간은 언제인지 발견해보세요.</p>
+    <button class="btn-start" onclick="startQuiz()">테스트 시작하기</button>
+    <div class="intro-footer">소요시간 약 2분 · 10문항</div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="quiz-container" id="quiz">
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="question-counter" id="counter">01 / 10</div>
+    <div class="question-card" id="questionCard">
+      <span class="question-emoji" id="qEmoji"></span>
+      <div class="question-text" id="qText"></div>
+      <div class="options" id="options"></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="result-container" id="result">
+    <div class="result-card">
+      <div class="result-header" id="resultHeader">
+        <span class="result-emoji" id="resultEmoji"></span>
+        <div class="result-type-label" id="resultLabel"></div>
+        <div class="result-type-name" id="resultName"></div>
+        <div class="result-subtitle" id="resultSub"></div>
+      </div>
+      <div class="result-body">
+        <p class="result-desc" id="resultDesc"></p>
+        <div class="score-bars" id="scoreBars"></div>
+        <div class="result-tags" id="resultTags"></div>
+        <div class="result-tip">
+          <div class="result-tip-title">💡 행복 팁</div>
+          <p id="resultTip"></p>
+        </div>
+        <button class="btn-retry" onclick="retry()">다시 테스트하기 ↻</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
