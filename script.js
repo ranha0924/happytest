@@ -145,6 +145,26 @@ const types = {
   }
 };
 
+// === SCROLL REVEAL FOR ABOUT CARDS ===
+function revealAboutCards() {
+  const cards = document.querySelectorAll('.about-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(card => observer.observe(card));
+}
+
+document.addEventListener('DOMContentLoaded', revealAboutCards);
+
+function scrollToIntro() {
+  document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
+}
+
 // === STATE ===
 let currentQ = 0;
 let scores = { a: 0, b: 0, c: 0, d: 0 };
